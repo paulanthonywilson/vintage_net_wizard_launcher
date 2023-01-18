@@ -21,11 +21,18 @@ import Config
 config :vintage_net_wizard_launcher, launch_pin: 17
 ```
 
-Stop automatic launching in both cases with
+Stop automatic launching on startup  with
 
 ```elixir
+import Config
+config :vintage_net_wizard_launcher, Configuration, start_if_unconfigured?: false
+```
 
-config :vintage_net_wizard_launcher, Configuration, launch_pin: false, start_if_unconfigured?: false
+Do not monitor a GPIO pin for a button press that launches the wizard  with
+
+```elixir
+import Config
+config :vintage_net_wizard_launcher, Configuration, launch_pin: false
 ```
 
 (Not including this hexicle would also have the same non-result).
